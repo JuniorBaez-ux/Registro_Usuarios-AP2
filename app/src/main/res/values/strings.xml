@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Registro_Usarios_AP2</string>
+    <string name="app_name">Registro de usuarios</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -11,7 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="hint_cliente">Cliente </string>
     <string name="hint_email" >Email</string>
-    <string name="hint_ocupacion">Ocupacion</string>
+    <string name="hint_ocupacion">Ocupacion ID</string>
     <string name="hint_balance" >Balance</string>
     <string name="guardar">Guardar</string>
 </resources>
