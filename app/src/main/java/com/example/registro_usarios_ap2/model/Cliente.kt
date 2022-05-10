@@ -8,5 +8,7 @@ data class Cliente(
     @PrimaryKey(autoGenerate = true)
     val clienteId: Int,
     val nombre: String,
+    val email: String,
+    val ocupacionId: Int,
     val balance: Float
 )
