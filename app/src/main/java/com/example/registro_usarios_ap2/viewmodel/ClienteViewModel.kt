@@ -16,7 +16,7 @@ class ClienteViewModel @Inject constructor(
     val repository: ClienteRepository
 ) : ViewModel(){
 
-    val ocupaciones : Flow<List<Cliente>>
+    val clientes : Flow<List<Cliente>>
         get() =  repository.GetLista()
 
     private val _guardado = MutableLiveData(false)
