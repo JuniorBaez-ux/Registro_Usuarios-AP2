@@ -17,34 +17,10 @@ import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class   MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-    private val viewModel: ClienteViewModel by viewModels()
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.guardarButton.setOnClickListener {
-            viewModel.guardar(Cliente(
-                0,
-                binding.clienteEditText.text.toString(),
-                binding.emailEditText.text.toString(),
-                binding.ocuapcionEditText.text.toString().toInt(),
-                binding.balanceEditText.floatValue()
-            ))
-        }
-
-        viewModel.guardado.observe(this) {
-            if (it) {
-                Snackbar.make(binding.balanceEditText, "Se guardo con exito!", Snackbar.LENGTH_LONG).show()
-            }
-        }
+        setContentView(R.layout.activity_main)
     }
-
-    fun TextInputEditText.floatValue() = text.toString().toFloatOrNull() ?: 0.0f
-
 }
