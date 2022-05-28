@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/Downloads/Registro_Usarios_AP2/app/src/main/res/layout/activity_main.xml" value="0.25677083333333334" />
         <entry key="..\:/Downloads/Registro_Usarios_AP2/app/src/main/res/menu/menu_main.xml" value="0.264" />
+        <entry key="..\:/Downloads/Registro_Usuarios-AP2/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Downloads/Registro_Usuarios-AP2/app/src/main/res/layout/clientes_fragment.xml" value="0.25677083333333334" />
+        <entry key="..\:/Downloads/Registro_Usuarios-AP2/app/src/main/res/layout/lista_clientes_fragment.xml" value="0.25677083333333334" />
+        <entry key="..\:/Downloads/Registro_Usuarios-AP2/app/src/main/res/layout/row_cliente.xml" value="0.25677083333333334" />
       </map>
     </option>
   </component>
