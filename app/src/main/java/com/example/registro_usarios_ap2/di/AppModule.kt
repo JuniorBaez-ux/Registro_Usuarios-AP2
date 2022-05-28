@@ -3,6 +3,7 @@ package com.example.registro_usarios_ap2.di
 import android.content.Context
 import androidx.room.Room
 import com.example.registro_usarios_ap2.data.ClienteDao
+import com.example.registro_usarios_ap2.data.ClienteRepository
 import com.example.registro_usarios_ap2.data.ClientesDb
 import dagger.Module
 import dagger.Provides
@@ -31,6 +32,11 @@ object  AppModule {
     @Provides
     fun ProvideClienteDAO(prestamosDb: ClientesDb): ClienteDao {
         return prestamosDb.clienteDao
+    }
+
+    @Provides
+    fun ProvideClienteRepository(clienteDao: ClienteDao): ClienteRepository {
+        return ClienteRepository(clienteDao)
     }
 
 }
