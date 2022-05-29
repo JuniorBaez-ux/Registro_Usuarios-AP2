@@ -15,4 +15,7 @@
     <string name="hint_balance" >Balance</string>
     <string name="guardar">Guardar</string>
     <string name="agregar">Agregar</string>
+    <string name="hint_ingresos">Ingresos</string>
+    <string name="ocupacion">Ocupaciones</string>
+    <string name="ocupacionDescripcion">Ocupacion</string>
 </resources>
