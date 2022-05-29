@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_to_clientesFragment"
             app:destination="@id/clientesFragment" />
+        <action
+            android:id="@+id/actionToOcupacionesFragment"
+            app:destination="@id/listaOcupacionesFragment2" />
     </fragment>
 
     <fragment
@@ -26,6 +29,26 @@
         <argument
             android:name="cliente"
             app:argType="com.example.registro_usarios_ap2.model.Cliente"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaOcupacionesFragment2"
+        android:name="com.example.registro_usarios_ap2.viewmodel.ListaOcupacionesFragment"
+        android:label="lista_ocupaciones_fragment"
+        tools:layout="@layout/lista_ocupaciones_fragment" >
+        <action
+            android:id="@+id/actionToOcupacionesFragment2"
+            app:destination="@id/ocupacionesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/ocupacionesFragment2"
+        android:name="com.example.registro_usarios_ap2.viewmodel.OcupacionesFragment"
+        android:label="ocupaciones_fragment"
+        tools:layout="@layout/ocupaciones_fragment" >
+        <argument
+            android:name="ocupacion"
+            app:argType="com.example.registro_usarios_ap2.model.Ocupacion"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>

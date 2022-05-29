@@ -31,4 +31,16 @@
         android:contentDescription="@string/agregar"
         android:focusable="true" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ocupacionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/ocupacion"
+        android:focusable="true" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
