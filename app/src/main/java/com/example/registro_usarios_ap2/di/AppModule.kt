@@ -2,9 +2,7 @@ package com.example.registro_usarios_ap2.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.registro_usarios_ap2.data.ClienteDao
-import com.example.registro_usarios_ap2.data.ClienteRepository
-import com.example.registro_usarios_ap2.data.ClientesDb
+import com.example.registro_usarios_ap2.data.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,6 +27,18 @@ object  AppModule {
             .build()
     }
 
+    @Singleton
+    @Provides
+    fun ProvideOcupacionDb(@ApplicationContext context: Context): OcupacionDb {
+        val DATABASE_NAME = "OcupacionDb"
+        return Room.databaseBuilder(
+            context,
+            OcupacionDb::class.java,
+            DATABASE_NAME       )
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
     @Provides
     fun ProvideClienteDAO(prestamosDb: ClientesDb): ClienteDao {
         return prestamosDb.clienteDao
@@ -39,4 +49,13 @@ object  AppModule {
         return ClienteRepository(clienteDao)
     }
 
+    @Provides
+    fun ProvideOcupacionDAO(prestamosDb: OcupacionDb): OcupacionDao {
+        return prestamosDb.ocupacionDao
+    }
+
+    @Provides
+    fun ProvideOcupacionRepository(ocupacionDao: OcupacionDao): OcupacionRepository {
+        return OcupacionRepository(ocupacionDao)
+    }
 }

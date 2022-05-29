@@ -13,6 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.registro_usarios_ap2.databinding.ListaClientesFragmentBinding
 import com.example.registro_usarios_ap2.model.Cliente
+import com.example.registro_usarios_ap2.model.Ocupacion
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -44,6 +45,10 @@ class ListaClientesFragment : Fragment() {
             openClientesFragment()
         }
 
+        binding.ocupacionButton.setOnClickListener {
+            openOcupacionesFragment()
+        }
+
         return binding.root
     }
 
@@ -52,4 +57,8 @@ class ListaClientesFragment : Fragment() {
        findNavController().navigate(action)
     }
 
+    fun openOcupacionesFragment(ocupacion: Ocupacion?=null)  {
+        val action = ListaClientesFragmentDirections.actionToOcupacionesFragment()
+        findNavController().navigate(action)
+    }
 }
