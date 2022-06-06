@@ -2,9 +2,9 @@ package com.example.registro_usarios_ap2.util
 
  sealed class Screen(val route: String) {
      object RegistroPersonaScreen: Screen("Registropersonas")
-     object ListadoPersonaScreen: Screen("Listadopersonas")
+     object ConsultaClientesScreen: Screen("ConsultaClientes")
 
      object RegistroOcupacionesScreen: Screen("RegistroOcupaciones")
-     object ListadoOcupacionesScreen: Screen("ListadoOcupacionesScreen")
+     object ConsultaOcupacionesScreen: Screen("ConsultaOcupaciones")
 
 }

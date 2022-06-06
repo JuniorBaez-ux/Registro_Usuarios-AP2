@@ -1,4 +1,4 @@
-package com.example.registro_usarios_ap2.theme
+package com.example.peopleregistercompose.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
