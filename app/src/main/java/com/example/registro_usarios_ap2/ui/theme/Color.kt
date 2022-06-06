@@ -1,4 +1,4 @@
-package com.example.registro_usarios_ap2.theme
+package com.example.registro_usarios_ap2.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
