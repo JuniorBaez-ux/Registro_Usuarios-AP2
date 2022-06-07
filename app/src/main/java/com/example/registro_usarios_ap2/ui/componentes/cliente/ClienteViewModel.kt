@@ -16,11 +16,13 @@ class ClienteViewModel @Inject constructor(
     val clienteRepository: ClienteRepository
 ): ViewModel() {
 
+    var clientes = clienteRepository.GetLista()
+
     var clienteID by mutableStateOf(0)
     var nombre by mutableStateOf("")
     var email by mutableStateOf("")
     var ocupacionId by mutableStateOf(0)
-    var balance: Double by mutableStateOf(0.0)
+    var balance by mutableStateOf("")
 
     fun Guardar(){
         viewModelScope.launch {
@@ -30,7 +32,7 @@ class ClienteViewModel @Inject constructor(
                     nombre = nombre,
                     email = email,
                     ocupacionId = ocupacionId,
-                    balance = balance
+                    balance = balance.toString().toDouble()
                 )
             )
         }
