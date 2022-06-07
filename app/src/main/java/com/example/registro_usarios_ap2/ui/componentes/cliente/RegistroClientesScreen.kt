@@ -3,11 +3,9 @@ package com.example.registro_usarios_ap2.ui.componentes.cliente
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Icon
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.Composable
@@ -20,15 +18,20 @@ import com.example.registro_usarios_ap2.OcupacionesSpinner
 @Composable
 fun RegistroClientesScreen(
     navHostController: NavHostController,
-    viewModel: ClienteViewModel = hiltViewModel()
+    clienteViewModel: ClienteViewModel = hiltViewModel()
 ) {
 
-    var balance = viewModel.balance;
     val ocup = listOf("Maestro", "Ingeniero", "Doctor", "Carpinterio")
+
+    Scaffold(
+        topBar = { TopAppBar(title = { Text(text = "Registro de Personas") }) }
+    ){
+
+
     Column(modifier = Modifier.padding(8.dp)) {
         OutlinedTextField(
-            value = viewModel.nombre,
-            onValueChange = {viewModel.nombre = it},
+            value = clienteViewModel.nombre,
+            onValueChange = {clienteViewModel.nombre = it},
             modifier = Modifier.fillMaxWidth(),
             label = {
                 Text(text = "Nombre de la Persona")
@@ -41,8 +44,8 @@ fun RegistroClientesScreen(
         )
 
         OutlinedTextField(
-            value = viewModel.email,
-            onValueChange = {viewModel.email = it},
+            value = clienteViewModel.email,
+            onValueChange = {clienteViewModel.email = it},
             modifier = Modifier.fillMaxWidth(),
             label = {
                 Text(text = "Email")
@@ -56,9 +59,10 @@ fun RegistroClientesScreen(
 
         OcupacionesSpinner(ocupacion = ocup)
 
-     /*   OutlinedTextField(
-            value = balance,
-            onValueChange = {balance = it},
+        OutlinedTextField(
+
+            value = clienteViewModel.balance,
+            onValueChange = {clienteViewModel.balance = it},
             modifier = Modifier.fillMaxWidth(),
             label = {
                 Text(text = "Salario")
@@ -68,16 +72,17 @@ fun RegistroClientesScreen(
                     imageVector = Icons.Default.Check,
                     contentDescription = null)
             }
-        )*/
+        )
 
         OutlinedButton(
             onClick = {
-                viewModel.Guardar()
+                clienteViewModel.Guardar()
 
                 navHostController.navigateUp()
             }
         ) {
             Text(text = "Guardar")
         }
+    }
     }
 }
